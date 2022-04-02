@@ -1,6 +1,13 @@
+.hero {
+  background-image: url(/hero-casantonella-blur.webp);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
 .hero .container {
   display: flex;
-  background: url(/hero-casantonella.webp);
+  background-image: url(/hero-casantonella.webp);
+  backdrop-filter: blur(8px);
   background-position: center;
   background-size: cover;
   height: 400px;
