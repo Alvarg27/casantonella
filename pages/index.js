@@ -93,6 +93,7 @@ export default function Home({ response }) {
           {data.map((category) => {
             return (
               <div
+                key={category.id}
                 className={styles.categoryCard}
                 onClick={() => setSelectedCategory(category.id)}
                 onMouseOver={() => setHoveredCategory(category.id)}
