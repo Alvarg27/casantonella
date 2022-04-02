@@ -23,6 +23,16 @@ export default function Home({ response }) {
               if (mainCategory._ref === category._id) {
                 const productsArr = [];
                 response.map((product) => {
+                  let productImage = null;
+                  response.map((image) => {
+                    if (
+                      product.mainImage &&
+                      image._type === "sanity.imageAsset" &&
+                      product.mainImage.asset._ref === image._id
+                    ) {
+                      productImage = image.url;
+                    }
+                  });
                   if (product._type === "products") {
                     product.subCategories.map((productCat) => {
                       if (productCat._ref === subCategory._id) {
@@ -32,6 +42,7 @@ export default function Home({ response }) {
                           titleEn: product.titleEn,
                           descriptionEs: product.descriptionEs,
                           descriptionEn: product.descriptionEn,
+                          mainImage: productImage,
                           price: product.price,
                         });
                       }
@@ -43,7 +54,7 @@ export default function Home({ response }) {
                   titleEs: subCategory.titleEs,
                   titleEn: subCategory.titleEn,
                   products: productsArr.sort((a, b) =>
-                    a.title.normalize().localeCompare(b.title.normalize())
+                    a.titleEs.normalize().localeCompare(b.titleEs.normalize())
                   ),
                 });
               }
@@ -83,6 +94,8 @@ export default function Home({ response }) {
     sortResponse();
     firstCategory();
   }, []);
+
+  console.log(response);
 
   return (
     <div className={styles.home}>
