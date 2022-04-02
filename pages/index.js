@@ -4,8 +4,10 @@ import styles from "../styles/Home.module.css";
 import { sanityClient } from "../sanity";
 import { useEffect, useState } from "react";
 import Category from "../components/Category";
+import LanguageSelect from "../components/LanguageSelect";
 
 export default function Home({ response }) {
+  const [selectedLanguage, setSelectedLanguage] = useState("es");
   const [selectedCategory, setSelectedCategory] = useState();
   const [hoveredCategory, setHoveredCategory] = useState();
   const [data, setData] = useState([]);
@@ -26,8 +28,10 @@ export default function Home({ response }) {
                       if (productCat._ref === subCategory._id) {
                         productsArr.push({
                           id: product._id,
-                          title: product.titleEs,
-                          description: product.descriptionEs,
+                          titleEs: product.titleEs,
+                          titleEn: product.titleEn,
+                          descriptionEs: product.descriptionEs,
+                          descriptionEn: product.descriptionEn,
                           price: product.price,
                         });
                       }
@@ -36,7 +40,8 @@ export default function Home({ response }) {
                 });
                 subCategoryArr.push({
                   id: subCategory._id,
-                  title: subCategory.title,
+                  titleEs: subCategory.titleEs,
+                  titleEn: subCategory.titleEn,
                   products: productsArr.sort((a, b) =>
                     a.title.normalize().localeCompare(b.title.normalize())
                   ),
@@ -47,16 +52,15 @@ export default function Home({ response }) {
         });
         categoryArr.push({
           id: category._id,
-          title: category.title,
-          subCategories: subCategoryArr.sort((a, b) =>
-            a.title.normalize().localeCompare(b.title.normalize())
-          ),
+          titleEs: category.titleEs,
+          titleEn: category.titleEn,
+          subCategories: subCategoryArr,
         });
       }
     });
     setData(
       categoryArr.sort((a, b) =>
-        a.title.normalize().localeCompare(b.title.normalize())
+        a.titleEs.normalize().localeCompare(b.titleEs.normalize())
       )
     );
   };
@@ -70,7 +74,7 @@ export default function Home({ response }) {
     });
     setSelectedCategory(
       categoryArr.sort((a, b) =>
-        a.title.normalize().localeCompare(b.title.normalize())
+        a.titleEs.normalize().localeCompare(b.titleEs.normalize())
       )[0]._id
     );
   };
@@ -89,6 +93,10 @@ export default function Home({ response }) {
       </Head>
 
       <main className={styles.main}>
+        <LanguageSelect
+          setSelectedLanguage={setSelectedLanguage}
+          selectedLanguage={selectedLanguage}
+        />
         <div className={styles.categoriesContainer}>
           {data.map((category) => {
             return (
@@ -106,7 +114,11 @@ export default function Home({ response }) {
                       : "grey",
                 }}
               >
-                <h3>{category.title}</h3>
+                <h3>
+                  {selectedLanguage === "es"
+                    ? category.titleEs
+                    : category.titleEn}
+                </h3>
               </div>
             );
           })}
@@ -114,7 +126,13 @@ export default function Home({ response }) {
         <div className="line" />
         {data.map((category) => {
           if (category.id === selectedCategory)
-            return <Category key={category.id} category={category} />;
+            return (
+              <Category
+                key={category.id}
+                category={category}
+                selectedLanguage={selectedLanguage}
+              />
+            );
         })}
       </main>
     </div>

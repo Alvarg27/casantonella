@@ -1,0 +1,8 @@
+.languageSelect .container {
+  display: flex;
+}
+
+.languageSelect .container .languageContainer {
+  padding: 15px;
+  cursor: pointer;
+}
