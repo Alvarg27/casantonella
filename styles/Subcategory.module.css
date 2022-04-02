@@ -1,0 +1,4 @@
+.subCategory .titleContainer {
+  cursor: pointer;
+  border: 1px solid lightgray;
+}

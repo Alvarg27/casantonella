@@ -1,0 +1,9 @@
+.productCard {
+  width: 400px;
+}
+.productCard .container {
+  margin: 20px;
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.25);
+  border-radius: 15px;
+  padding: 15px;
+}
