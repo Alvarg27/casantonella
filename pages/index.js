@@ -75,7 +75,7 @@ export default function Home({ response }) {
     );
   };
 
-  useEffect(() => {
+  useEffect((sortResponse = sortResponse, firstCategory = firstCategory) => {
     sortResponse();
     firstCategory();
   }, []);
