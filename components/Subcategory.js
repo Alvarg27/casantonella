@@ -11,6 +11,7 @@ export default function Subcategory({ subCategory }) {
         className={styles.titleContainer}
       >
         <h3>{subCategory.title}</h3>
+        <div className="line" />
       </div>
       {selected ? (
         <div>

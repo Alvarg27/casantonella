@@ -37,7 +37,9 @@ export default function Home({ response }) {
                 subCategoryArr.push({
                   id: subCategory._id,
                   title: subCategory.title,
-                  products: productsArr,
+                  products: productsArr.sort((a, b) =>
+                    a.title.normalize().localeCompare(b.title.normalize())
+                  ),
                 });
               }
             });
@@ -46,18 +48,38 @@ export default function Home({ response }) {
         categoryArr.push({
           id: category._id,
           title: category.title,
-          subCategories: subCategoryArr,
+          subCategories: subCategoryArr.sort((a, b) =>
+            a.title.normalize().localeCompare(b.title.normalize())
+          ),
         });
       }
     });
-    setData(categoryArr);
+    setData(
+      categoryArr.sort((a, b) =>
+        a.title.normalize().localeCompare(b.title.normalize())
+      )
+    );
+  };
+
+  const firstCategory = () => {
+    const categoryArr = [];
+    response.map((category) => {
+      if (category._type === "mainCategory") {
+        categoryArr.push(category);
+      }
+    });
+    setSelectedCategory(
+      categoryArr.sort((a, b) =>
+        a.title.normalize().localeCompare(b.title.normalize())
+      )[0]._id
+    );
   };
 
   useEffect(() => {
     sortResponse();
+    firstCategory();
   }, []);
 
-  console.log(data);
   return (
     <div className={styles.home}>
       <Head>
@@ -76,11 +98,11 @@ export default function Home({ response }) {
                 onMouseOver={() => setHoveredCategory(category.id)}
                 onMouseOut={() => setHoveredCategory("")}
                 style={{
-                  background:
+                  color:
                     hoveredCategory === category.id ||
                     selectedCategory === category.id
-                      ? "lightgrey"
-                      : "",
+                      ? "black"
+                      : "grey",
                 }}
               >
                 <h3>{category.title}</h3>
@@ -88,6 +110,7 @@ export default function Home({ response }) {
             );
           })}
         </div>
+        <div className="line" />
         {data.map((category) => {
           if (category.id === selectedCategory)
             return <Category key={category.id} category={category} />;

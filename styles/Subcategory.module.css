@@ -1,4 +1,10 @@
 .subCategory .titleContainer {
   cursor: pointer;
-  border: 1px solid lightgray;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  background: rgb(240, 240, 240);
+}
+.subCategory .titleContainer h3 {
+  margin: auto 20px;
 }

@@ -1,11 +1,13 @@
 .home .categoriesContainer {
   display: flex;
+  justify-content: space-around;
 }
 .home .categoriesContainer .categoryCard {
   padding: 20px;
   height: 100px;
   display: flex;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .home .categoriesContainer .categoryCard h3 {
