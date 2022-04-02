@@ -5,6 +5,7 @@ import { sanityClient } from "../sanity";
 import { useEffect, useState } from "react";
 import Category from "../components/Category";
 import LanguageSelect from "../components/LanguageSelect";
+import Hero from "../components/Hero";
 
 export default function Home({ response }) {
   const [selectedLanguage, setSelectedLanguage] = useState("es");
@@ -65,7 +66,9 @@ export default function Home({ response }) {
           id: category._id,
           titleEs: category.titleEs,
           titleEn: category.titleEn,
-          subCategories: subCategoryArr,
+          subCategories: subCategoryArr.sort((a, b) =>
+            a.titleEs.normalize().localeCompare(b.titleEs.normalize())
+          ),
         });
       }
     });
@@ -110,6 +113,7 @@ export default function Home({ response }) {
           setSelectedLanguage={setSelectedLanguage}
           selectedLanguage={selectedLanguage}
         />
+        <Hero />
         <div className={styles.categoriesContainer}>
           {data.map((category) => {
             return (

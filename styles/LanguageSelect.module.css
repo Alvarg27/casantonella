@@ -1,3 +1,7 @@
+.languageSelect {
+  position: absolute;
+  z-index: 2;
+}
 .languageSelect .container {
   display: flex;
 }
@@ -5,4 +9,5 @@
 .languageSelect .container .languageContainer {
   padding: 15px;
   cursor: pointer;
+  color: white;
 }
