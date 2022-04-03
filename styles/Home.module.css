@@ -14,3 +14,10 @@
 .home .categoriesContainer .categoryCard h3 {
   margin: auto;
 }
+
+.home .verticalLine {
+  width: 1px;
+  height: 25px;
+  background: gray;
+  margin: auto 5px;
+}

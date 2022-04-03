@@ -140,15 +140,7 @@ export default function Home({ response }) {
                     ? category.titleEs
                     : category.titleEn}
                 </h3>
-                <h3
-                  style={{
-                    margin: "auto 5px",
-                    fontWeight: "normal",
-                    color: "gray",
-                  }}
-                >
-                  |
-                </h3>
+                <div className={styles.verticalLine}></div>
               </div>
             );
           })}
