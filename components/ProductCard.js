@@ -30,7 +30,7 @@ export default function ProductCard({ product, selectedLanguage }) {
             </p>
           </div>
         </div>
-        <div className="line" style={{ marginTop: "30px" }}></div>
+        <div className="line" style={{ marginTop: "10px" }}></div>
       </div>
     </div>
   );

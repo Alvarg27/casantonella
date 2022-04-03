@@ -1,8 +1,8 @@
 .productCard {
+  margin: 10px 0;
 }
 .productCard .container {
-  margin: 20px;
-  padding: 15px;
+  padding: 0 10px;
 }
 .productCard .container .containerRow {
   display: flex;
@@ -12,7 +12,7 @@
   display: flex;
 }
 .productCard .productImage img {
-  height: 120px;
+  height: 100%;
   width: 120px;
   border-radius: 7px;
   margin: auto;
@@ -25,10 +25,15 @@
 }
 .productCard .title {
   color: black;
+  margin: auto 0;
 }
 .productCard .price {
   color: black;
+  margin: auto 0;
 }
 .productCard .description {
   color: grey;
+  margin: auto 0;
+  width: 70%;
+  margin-top: 10px;
 }
