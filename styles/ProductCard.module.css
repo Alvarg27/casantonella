@@ -24,13 +24,14 @@
   width: 100%;
 }
 .productCard .title {
-  color: black;
+  color: lightgray;
   margin: 0 0 10px 0;
   font-weight: normal;
 }
 .productCard .price {
   color: black;
   margin: 0 0 10px 20px;
+  color: lightgray;
 }
 .productCard .description {
   color: grey;
