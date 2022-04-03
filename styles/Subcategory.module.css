@@ -3,7 +3,16 @@
   height: 60px;
   display: flex;
   flex-direction: column;
+  background: rgb(23, 24, 27);
 }
 .subCategory .titleContainer h3 {
+  margin: auto 0;
+}
+.subCategory .row {
+  display: flex;
+  justify-content: space-between;
   margin: auto 20px;
+}
+.subCategory .arrowIcon {
+  color: lightgray;
 }

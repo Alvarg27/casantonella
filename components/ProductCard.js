@@ -24,11 +24,15 @@ export default function ProductCard({ product, selectedLanguage }) {
               <h3 className={styles.price}>${product.price}</h3>
             </div>
 
-            <p className={styles.description}>
-              {product.descriptionEn && selectedLanguage === "en"
-                ? product.descriptionEn
-                : product.descriptionEs}
-            </p>
+            {product.descriptionEs ? (
+              <p className={styles.description}>
+                {product.descriptionEn && selectedLanguage === "en"
+                  ? product.descriptionEn
+                  : product.descriptionEs}
+              </p>
+            ) : (
+              ""
+            )}
           </div>
         </div>
         <div className="line" style={{ marginTop: "10px" }}></div>
