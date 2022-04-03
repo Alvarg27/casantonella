@@ -1,13 +1,19 @@
 .languageSelect {
   position: absolute;
   z-index: 2;
+  display: flex;
+  width: 100%;
 }
 .languageSelect .container {
   display: flex;
+  margin: auto;
 }
 
 .languageSelect .container .languageContainer {
   padding: 15px;
   cursor: pointer;
   color: white;
+}
+.languageSelect .container .languageContainer p {
+  transition: 0.3s;
 }
