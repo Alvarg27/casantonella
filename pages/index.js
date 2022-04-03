@@ -130,7 +130,7 @@ export default function Home({ response }) {
                     color:
                       hoveredCategory === category.id ||
                       selectedCategory === category.id
-                        ? "white"
+                        ? "lightgray"
                         : "grey",
                   }}
                 >

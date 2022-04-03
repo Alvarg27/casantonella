@@ -16,8 +16,9 @@
 }
 
 .home .verticalLine {
-  width: 1px;
-  height: 25px;
+  width: 3px;
+  height: 3px;
   background: gray;
   margin: auto 5px;
+  border-radius: 50%;
 }
