@@ -98,8 +98,6 @@ export default function Home({ response }) {
     firstCategory();
   }, []);
 
-  console.log(response);
-
   return (
     <div className={styles.home}>
       <Head>
@@ -140,7 +138,11 @@ export default function Home({ response }) {
                     ? category.titleEs
                     : category.titleEn}
                 </h3>
-                <div className={styles.verticalLine}></div>
+                {data[data.length - 1].id === category.id ? (
+                  ""
+                ) : (
+                  <div className={styles.verticalLine}></div>
+                )}
               </div>
             );
           })}
