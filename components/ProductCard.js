@@ -17,16 +17,17 @@ export default function ProductCard({ product, selectedLanguage }) {
           <div className={styles.productInfo}>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <h3 className={styles.title}>
-                {selectedLanguage === "es" ? product.titleEs : product.titleEn}
+                {product.titleEn && selectedLanguage === "en"
+                  ? product.titleEn
+                  : product.titleEs}
               </h3>
               <h3 className={styles.price}>${product.price}</h3>
             </div>
 
             <p className={styles.description}>
-              {" "}
-              {selectedLanguage === "es"
-                ? product.descriptionEs
-                : product.descriptionEn}
+              {product.descriptionEn && selectedLanguage === "en"
+                ? product.descriptionEn
+                : product.descriptionEs}
             </p>
           </div>
         </div>
