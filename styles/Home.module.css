@@ -1,6 +1,9 @@
+.home {
+}
 .home .categoriesContainer {
   display: flex;
   justify-content: space-around;
+  overflow: scroll;
 }
 .home .categoriesContainer .categoryCard {
   padding: 5px;
@@ -8,6 +11,7 @@
   display: flex;
   transition: 0.3s;
   cursor: pointer;
+  min-width: 150px;
 }
 
 .home .categoriesContainer .categoryCard h3 {
