@@ -158,6 +158,15 @@ export default function Home({ response }) {
               />
             );
         })}
+        <div className={styles.notesContainer}>
+          <p>
+            *Todos los precios están en pesos mexicanos e incluyen impuestos.
+          </p>
+          <p>*En productos crudos, el comensal es responsable de su consumo</p>
+        </div>
+        <p style={{ margin: "auto", color: "grey" }}>
+          Powered by <b>tectify.io</b>
+        </p>
       </main>
     </div>
   );

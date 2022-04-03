@@ -1,4 +1,6 @@
-.home {
+.home main {
+  display: flex;
+  flex-direction: column;
 }
 .home .categoriesContainer {
   display: flex;
@@ -21,4 +23,9 @@
   background: gray;
   margin: auto 5px;
   border-radius: 50%;
+}
+.home .notesContainer {
+  color: grey;
+  margin: 10px auto;
+  font-size: 10px;
 }
