@@ -1,6 +1,6 @@
 .subCategory .titleContainer {
   cursor: pointer;
-  height: 60px;
+  height: 70px;
   display: flex;
   flex-direction: column;
   background: rgb(36, 39, 43);
@@ -15,4 +15,5 @@
 }
 .subCategory .arrowIcon {
   color: lightgray;
+  margin: auto 0;
 }

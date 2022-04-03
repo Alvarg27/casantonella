@@ -5,6 +5,7 @@ import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 
 export default function Subcategory({ subCategory, selectedLanguage }) {
   const [selected, setSelected] = useState(false);
+
   return (
     <div className={styles.subCategory}>
       <div
@@ -12,11 +13,22 @@ export default function Subcategory({ subCategory, selectedLanguage }) {
         className={styles.titleContainer}
       >
         <div className={styles.row}>
-          <h3>
-            {selectedLanguage === "es"
-              ? subCategory.titleEs
-              : subCategory.titleEn}
-          </h3>
+          <div style={{ margin: " 0" }}>
+            <h3>
+              {selectedLanguage === "es"
+                ? subCategory.titleEs
+                : subCategory.titleEn}
+            </h3>
+            {subCategory.descriptionEs ? (
+              <p
+                style={{ margin: "5px 0 0 0", fontSize: "14px", color: "gray" }}
+              >
+                {subCategory.descriptionEs}
+              </p>
+            ) : (
+              ""
+            )}
+          </div>
           {selected ? (
             <FaCaretUp className={styles.arrowIcon} />
           ) : (
