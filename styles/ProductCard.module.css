@@ -30,12 +30,11 @@
 }
 .productCard .price {
   color: black;
-  margin: 0 0 10px 0;
+  margin: 0 0 10px 20px;
 }
 .productCard .description {
   color: grey;
   margin: 0;
   font-size: 14px;
-
   margin-top: 0px;
 }
