@@ -108,7 +108,7 @@ export default function Home({ response }) {
           name="description"
           content="Menú digital de restaurante Casa Antonella, Antea."
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/casantonella-icon.webp" />
       </Head>
 
       <main className={styles.main}>
