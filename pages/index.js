@@ -126,18 +126,28 @@ export default function Home({ response }) {
                 onClick={() => setSelectedCategory(category.id)}
                 onMouseOver={() => setHoveredCategory(category.id)}
                 onMouseOut={() => setHoveredCategory("")}
-                style={{
-                  color:
-                    hoveredCategory === category.id ||
-                    selectedCategory === category.id
-                      ? "black"
-                      : "grey",
-                }}
               >
-                <h3>
+                <h3
+                  style={{
+                    color:
+                      hoveredCategory === category.id ||
+                      selectedCategory === category.id
+                        ? "black"
+                        : "grey",
+                  }}
+                >
                   {selectedLanguage === "es"
                     ? category.titleEs
                     : category.titleEn}
+                </h3>
+                <h3
+                  style={{
+                    margin: "auto 5px",
+                    fontWeight: "normal",
+                    color: "gray",
+                  }}
+                >
+                  |
                 </h3>
               </div>
             );

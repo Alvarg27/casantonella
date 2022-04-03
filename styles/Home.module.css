@@ -2,15 +2,13 @@
 }
 .home .categoriesContainer {
   display: flex;
-  overflow: scroll;
+  justify-content: center;
 }
 .home .categoriesContainer .categoryCard {
-  padding: 5px;
   height: 100px;
   display: flex;
   transition: 0.3s;
   cursor: pointer;
-  margin: auto 20px;
 }
 
 .home .categoriesContainer .categoryCard h3 {
