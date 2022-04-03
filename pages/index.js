@@ -54,6 +54,8 @@ export default function Home({ response }) {
                   id: subCategory._id,
                   titleEs: subCategory.titleEs,
                   titleEn: subCategory.titleEn,
+                  descriptionEs: subCategory.descriptionEs,
+                  descriptionEn: subCategory.descriptionEn,
                   products: productsArr.sort((a, b) =>
                     a.titleEs.normalize().localeCompare(b.titleEs.normalize())
                   ),
