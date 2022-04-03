@@ -132,6 +132,8 @@ export default function Home({ response }) {
                       selectedCategory === category.id
                         ? "lightgray"
                         : "grey",
+                    fontSize:
+                      selectedCategory === category.id ? "20px" : "16px",
                   }}
                 >
                   {selectedLanguage === "es"

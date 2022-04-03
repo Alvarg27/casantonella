@@ -12,7 +12,9 @@ export default function LanguageSelect({
           className={styles.languageContainer}
           onClick={() => setSelectedLanguage("es")}
         >
-          <p style={{ color: selectedLanguage === "es" ? "white" : "grey" }}>
+          <p
+            style={{ color: selectedLanguage === "es" ? "lightgrey" : "grey" }}
+          >
             {"Español (ES)"}
           </p>
         </div>
@@ -20,7 +22,9 @@ export default function LanguageSelect({
           className={styles.languageContainer}
           onClick={() => setSelectedLanguage("en")}
         >
-          <p style={{ color: selectedLanguage === "en" ? "white" : "grey" }}>
+          <p
+            style={{ color: selectedLanguage === "en" ? "lightgrey" : "grey" }}
+          >
             {"English (EN)"}
           </p>
         </div>

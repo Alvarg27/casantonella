@@ -12,7 +12,7 @@
 .languageSelect .container .languageContainer {
   padding: 15px;
   cursor: pointer;
-  color: white;
+  color: lightgray;
 }
 .languageSelect .container .languageContainer p {
   transition: 0.3s;
