@@ -14,7 +14,7 @@ export default function CategorySlider({
   template,
 }) {
   const ref = useRef();
-  const categoryLength = 120;
+  const categoryLength = 110;
   const [scroll, setScroll] = useState(0);
   const [offsetX, setOffsetX] = useState(0);
   const handleScroll = () => setOffsetX(ref.current.scrollLeft);
@@ -51,7 +51,7 @@ export default function CategorySlider({
             <div
               onClick={() => handleScrollLeft()}
               className={styles.arrowCircle}
-              style={{ left: "0px" }}
+              style={{ left: "-10px" }}
             >
               <div className={styles.arrowIcon}>
                 <GoChevronLeft />
@@ -64,7 +64,7 @@ export default function CategorySlider({
             <div
               onClick={() => handleScrollRight()}
               className={styles.arrowCircle}
-              style={{ right: "0px" }}
+              style={{ right: "-10px" }}
             >
               <GoChevronRight className={styles.arrowIcon} />
             </div>

@@ -1,9 +1,7 @@
 .categorySlider .container {
   position: relative;
   margin: auto;
-  padding: 0 10px;
-  height: 140px;
-  max-width: 380px;
+  max-width: 330px;
 }
 
 .categorySlider .categoriesContainer {
@@ -11,8 +9,7 @@
   overflow-x: scroll;
 }
 .categorySlider .categoriesContainer::-webkit-scrollbar {
-  width: 0px;
-  background: transparent; /* make scrollbar transparent */
+  display: none;
 }
 
 .categorySlider .arrowCircle {
