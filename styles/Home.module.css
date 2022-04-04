@@ -5,6 +5,7 @@
 .home .categoriesContainer {
   display: flex;
   justify-content: center;
+  overflow-x: scroll;
 }
 
 .home .notesContainer {
