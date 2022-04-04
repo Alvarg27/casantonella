@@ -15,10 +15,9 @@ export default function CategorySlider({
 }) {
   const ref = useRef();
   const scroll = (scrollOffset) => {
-    let scrollAmount = 0;
     ref.current.scrollTo({
       top: 0,
-      left: (scrollAmount += scrollOffset),
+      left: scrollOffset,
       behavior: "smooth",
     });
   };
