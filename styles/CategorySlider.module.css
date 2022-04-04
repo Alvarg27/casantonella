@@ -7,6 +7,8 @@
 .categorySlider .categoriesContainer {
   display: flex;
   overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
 }
 .categorySlider .categoriesContainer::-webkit-scrollbar {
   display: none;
