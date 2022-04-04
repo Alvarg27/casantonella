@@ -13,7 +13,7 @@ export default function CategorySlider({
   data,
   template,
 }) {
-  const ref = useRef(null);
+  const ref = useRef();
   const scroll = (scrollOffset) => {
     let scrollAmount = 0;
     ref.current.scrollTo({
