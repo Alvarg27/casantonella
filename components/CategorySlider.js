@@ -14,7 +14,8 @@ export default function CategorySlider({
   template,
 }) {
   const ref = useRef();
-  const categoryLength = 100;
+  const categoryLength = data.length * 110;
+  const scrollEnd = categoryLength - 340;
   const [scroll, setScroll] = useState(0);
   const [offsetX, setOffsetX] = useState(0);
   const handleScroll = () => setOffsetX(ref.current.scrollLeft);
@@ -27,19 +28,19 @@ export default function CategorySlider({
 
   const handleScrollRight = () => {
     ref.current.scrollTo({
-      left: 120,
+      left: 110,
       behavior: "smooth",
     });
   };
 
   const handleScrollLeft = () => {
     ref.current.scrollTo({
-      left: -120,
+      left: -110,
       behavior: "smooth",
     });
   };
 
-  console.log(offsetX);
+  console.log(scrollEnd);
 
   return (
     <div className={styles.categorySlider}>
@@ -58,7 +59,7 @@ export default function CategorySlider({
               </div>
             </div>
           )}
-          {offsetX >= categoryLength ? (
+          {offsetX >= scrollEnd ? (
             ""
           ) : (
             <div
