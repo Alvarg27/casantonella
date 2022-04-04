@@ -1,11 +1,16 @@
 .categorySlider {
   position: relative;
   margin: auto;
-  width: 360px;
+  width: 100%;
+  padding: 0 10px;
 }
 .categorySlider .categoriesContainer {
   display: flex;
   overflow-x: scroll;
+}
+.categorySlider .categoriesContainer::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
 }
 
 .categorySlider .slideArrow {
