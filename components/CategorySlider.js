@@ -14,7 +14,13 @@ export default function CategorySlider({
   template,
 }) {
   const ref = useRef();
-
+  const scroll = (scrollOffset) => {
+    ref.current.scrollTo({
+      top: 0,
+      left: scrollOffset,
+      behavior: "smooth",
+    });
+  };
   return (
     <div className={styles.categorySlider}>
       <div ref={ref} className={styles.categoriesContainer}>
