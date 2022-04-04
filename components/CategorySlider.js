@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/CategorySlider.module.css";
 import CategoryCard from "./CategoryCard";
 import { useRef } from "react";
@@ -13,6 +13,9 @@ export default function CategorySlider({
   data,
   template,
 }) {
+  const ref = useRef();
+  const [categoryLength, setCategoryLength] = useState();
+  const [scroll, setScroll] = useState();
   const getCategories = () => {
     const categories = [];
     data.map((category) => {
@@ -20,19 +23,30 @@ export default function CategorySlider({
         categories.push(category.id);
       }
     });
+    setCategoryLength(categories.length);
   };
-  const ref = useRef();
-  const scroll = (scrollOffset) => {
+
+  const handleScrollRight = () => {
     ref.current.scrollTo({
-      left: scrollOffset,
+      left: 120,
       behavior: "smooth",
     });
   };
+
+  const handleScrollLeft = () => {
+    ref.current.scrollTo({
+      left: -120,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {}, []);
+
   return (
     <div className={styles.categorySlider}>
       <div ref={ref} className={styles.categoriesContainer}>
         <div
-          onClick={() => scroll(-120)}
+          onClick={() => handleScrollLeft()}
           className={styles.arrowCircle}
           style={{ left: "0px" }}
         >
@@ -41,7 +55,7 @@ export default function CategorySlider({
           </div>
         </div>
         <div
-          onClick={() => scroll(120)}
+          onClick={() => handleScrollRight()}
           className={styles.arrowCircle}
           style={{ right: "0px" }}
         >
