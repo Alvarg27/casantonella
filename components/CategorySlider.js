@@ -44,39 +44,41 @@ export default function CategorySlider({
 
   return (
     <div className={styles.categorySlider}>
-      <div ref={ref} className={styles.categoriesContainer}>
-        <div
-          onClick={() => handleScrollLeft()}
-          className={styles.arrowCircle}
-          style={{ left: "0px" }}
-        >
-          <div className={styles.arrowIcon}>
-            <GoChevronLeft />
+      <div className={styles.container}>
+        <div ref={ref} className={styles.categoriesContainer}>
+          <div
+            onClick={() => handleScrollLeft()}
+            className={styles.arrowCircle}
+            style={{ left: "0px" }}
+          >
+            <div className={styles.arrowIcon}>
+              <GoChevronLeft />
+            </div>
           </div>
-        </div>
-        <div
-          onClick={() => handleScrollRight()}
-          className={styles.arrowCircle}
-          style={{ right: "0px" }}
-        >
-          <GoChevronRight className={styles.arrowIcon} />
-        </div>
+          <div
+            onClick={() => handleScrollRight()}
+            className={styles.arrowCircle}
+            style={{ right: "0px" }}
+          >
+            <GoChevronRight className={styles.arrowIcon} />
+          </div>
 
-        {data.map((category) => {
-          return (
-            <CategoryCard
-              key={category.id}
-              category={category}
-              setSelectedCategory={setSelectedCategory}
-              selectedCategory={selectedCategory}
-              hoveredCategory={hoveredCategory}
-              setHoveredCategory={setHoveredCategory}
-              selectedLanguage={selectedLanguage}
-              data={data}
-              template={template}
-            />
-          );
-        })}
+          {data.map((category) => {
+            return (
+              <CategoryCard
+                key={category.id}
+                category={category}
+                setSelectedCategory={setSelectedCategory}
+                selectedCategory={selectedCategory}
+                hoveredCategory={hoveredCategory}
+                setHoveredCategory={setHoveredCategory}
+                selectedLanguage={selectedLanguage}
+                data={data}
+                template={template}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );
