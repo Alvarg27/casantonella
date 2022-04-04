@@ -23,7 +23,9 @@ export default function Subcategory({ subCategory, selectedLanguage }) {
               <p
                 style={{ margin: "5px 0 0 0", fontSize: "14px", color: "gray" }}
               >
-                {subCategory.descriptionEs}
+                {selectedLanguage === "es"
+                  ? subCategory.descriptionEs
+                  : subCategory.descriptionEn}
               </p>
             ) : (
               ""
