@@ -1,11 +1,9 @@
-.categorySlider {
-  margin: 10px;
-}
 .categorySlider .container {
   position: relative;
   margin: auto;
   padding: 0 10px;
   height: 140px;
+  max-width: 380px;
 }
 
 .categorySlider .categoriesContainer {

@@ -14,17 +14,16 @@ export default function CategorySlider({
   template,
 }) {
   const ref = useRef();
-  const [categoryLength, setCategoryLength] = useState();
-  const [scroll, setScroll] = useState();
-  const getCategories = () => {
-    const categories = [];
-    data.map((category) => {
-      if (category._type === "mainCategory") {
-        categories.push(category.id);
-      }
-    });
-    setCategoryLength(categories.length);
-  };
+  const categoryLength = 120;
+  const [scroll, setScroll] = useState(0);
+  const [offsetX, setOffsetX] = useState(0);
+  const handleScroll = () => setOffsetX(ref.current.scrollLeft);
+
+  useEffect(() => {
+    ref.current.addEventListener("scroll", handleScroll);
+
+    return () => ref.current.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleScrollRight = () => {
     ref.current.scrollTo({
@@ -40,28 +39,36 @@ export default function CategorySlider({
     });
   };
 
-  useEffect(() => {}, []);
+  console.log(offsetX);
 
   return (
     <div className={styles.categorySlider}>
       <div className={styles.container}>
         <div ref={ref} className={styles.categoriesContainer}>
-          <div
-            onClick={() => handleScrollLeft()}
-            className={styles.arrowCircle}
-            style={{ left: "0px" }}
-          >
-            <div className={styles.arrowIcon}>
-              <GoChevronLeft />
+          {offsetX === 0 ? (
+            ""
+          ) : (
+            <div
+              onClick={() => handleScrollLeft()}
+              className={styles.arrowCircle}
+              style={{ left: "0px" }}
+            >
+              <div className={styles.arrowIcon}>
+                <GoChevronLeft />
+              </div>
             </div>
-          </div>
-          <div
-            onClick={() => handleScrollRight()}
-            className={styles.arrowCircle}
-            style={{ right: "0px" }}
-          >
-            <GoChevronRight className={styles.arrowIcon} />
-          </div>
+          )}
+          {offsetX === categoryLength ? (
+            ""
+          ) : (
+            <div
+              onClick={() => handleScrollRight()}
+              className={styles.arrowCircle}
+              style={{ right: "0px" }}
+            >
+              <GoChevronRight className={styles.arrowIcon} />
+            </div>
+          )}
 
           {data.map((category) => {
             return (
