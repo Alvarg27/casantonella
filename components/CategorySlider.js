@@ -28,19 +28,17 @@ export default function CategorySlider({
 
   const handleScrollRight = () => {
     ref.current.scrollTo({
-      left: 110,
-      behavior: "smooth",
+      top: 0,
+      left: offsetX + 110,
     });
   };
 
   const handleScrollLeft = () => {
     ref.current.scrollTo({
-      left: -110,
-      behavior: "smooth",
+      top: 0,
+      left: offsetX - 110,
     });
   };
-
-  console.log(scrollEnd);
 
   return (
     <div className={styles.categorySlider}>
