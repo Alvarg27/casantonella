@@ -1,9 +1,8 @@
 import React from "react";
 import styles from "../styles/CategorySlider.module.css";
 import CategoryCard from "./CategoryCard";
-import Icon from "./Icon";
-import { useState } from "react";
 import { useRef } from "react";
+import { GoChevronRight, GoChevronLeft } from "react-icons/go";
 
 export default function CategorySlider({
   setHoveredCategory,
@@ -28,17 +27,19 @@ export default function CategorySlider({
       <div ref={ref} className={styles.categoriesContainer}>
         <div
           onClick={() => scroll(-120)}
-          className={styles.slideArrow}
+          className={styles.arrowCircle}
           style={{ left: "0px" }}
         >
-          <Icon onClick={() => scroll(-120)} iconName="FaChevronLeft" />
+          <div className={styles.arrowIcon}>
+            <GoChevronLeft />
+          </div>
         </div>
         <div
           onClick={() => scroll(120)}
-          className={styles.slideArrow}
+          className={styles.arrowCircle}
           style={{ right: "0px" }}
         >
-          <Icon onClick={() => scroll(120)} iconName="FaChevronRight" />
+          <GoChevronRight className={styles.arrowIcon} />
         </div>
 
         {data.map((category) => {

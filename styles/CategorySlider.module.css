@@ -13,7 +13,7 @@
   background: transparent; /* make scrollbar transparent */
 }
 
-.categorySlider .slideArrow {
+.categorySlider .arrowCircle {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -24,4 +24,11 @@
   margin: auto 0;
   display: flex;
   cursor: pointer;
+}
+.categorySlider .arrowIcon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 15px;
 }
