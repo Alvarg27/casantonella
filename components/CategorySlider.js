@@ -14,7 +14,7 @@ export default function CategorySlider({
   template,
 }) {
   const ref = useRef();
-  const categoryLength = 110;
+  const categoryLength = 100;
   const [scroll, setScroll] = useState(0);
   const [offsetX, setOffsetX] = useState(0);
   const handleScroll = () => setOffsetX(ref.current.scrollLeft);
@@ -58,7 +58,7 @@ export default function CategorySlider({
               </div>
             </div>
           )}
-          {offsetX === categoryLength ? (
+          {offsetX >= categoryLength ? (
             ""
           ) : (
             <div
