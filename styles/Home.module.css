@@ -2,11 +2,6 @@
   display: flex;
   flex-direction: column;
 }
-.home .categoriesContainer {
-  display: flex;
-  justify-content: center;
-  overflow-x: scroll;
-}
 
 .home .notesContainer {
   color: grey;
