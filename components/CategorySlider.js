@@ -46,7 +46,7 @@ export default function CategorySlider({
     <div className={styles.categorySlider}>
       <div className={styles.container}>
         <div ref={ref} className={styles.categoriesContainer}>
-          {offsetX === 0 ? (
+          {offsetX <= 10 ? (
             ""
           ) : (
             <div
