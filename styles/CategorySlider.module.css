@@ -1,4 +1,22 @@
-.categoriesContainer {
+.categorySlider {
+  position: relative;
+  margin: auto;
+  width: 360px;
+}
+.categorySlider .categoriesContainer {
   display: flex;
   overflow-x: scroll;
+}
+
+.categorySlider .slideArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: lightgray;
+  margin: auto 0;
+  display: flex;
+  cursor: pointer;
 }
