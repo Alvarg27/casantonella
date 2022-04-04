@@ -13,10 +13,17 @@ export default function CategorySlider({
   data,
   template,
 }) {
+  const getCategories = () => {
+    const categories = [];
+    data.map((category) => {
+      if (category._type === "mainCategory") {
+        categories.push(category.id);
+      }
+    });
+  };
   const ref = useRef();
   const scroll = (scrollOffset) => {
     ref.current.scrollTo({
-      top: 0,
       left: scrollOffset,
       behavior: "smooth",
     });
