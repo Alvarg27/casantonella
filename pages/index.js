@@ -6,8 +6,10 @@ import { useEffect, useState } from "react";
 import Category from "../components/Category";
 import LanguageSelect from "../components/LanguageSelect";
 import Hero from "../components/Hero";
+import Icon from "../components/Icon";
+import CategoryCard from "../components/CategoryCard";
 
-export default function Home({ response }) {
+export default function Home({ response, template }) {
   const [selectedLanguage, setSelectedLanguage] = useState("es");
   const [selectedCategory, setSelectedCategory] = useState();
   const [hoveredCategory, setHoveredCategory] = useState();
@@ -68,6 +70,7 @@ export default function Home({ response }) {
           id: category._id,
           titleEs: category.titleEs,
           titleEn: category.titleEn,
+          icon: category.icon.name,
           subCategories: subCategoryArr.sort((a, b) =>
             a.titleEs.normalize().localeCompare(b.titleEs.normalize())
           ),
@@ -100,6 +103,8 @@ export default function Home({ response }) {
     firstCategory();
   }, []);
 
+  console.log(response);
+
   return (
     <div className={styles.home}>
       <Head>
@@ -115,39 +120,23 @@ export default function Home({ response }) {
         <LanguageSelect
           setSelectedLanguage={setSelectedLanguage}
           selectedLanguage={selectedLanguage}
+          template={template}
         />
         <Hero />
         <div className={styles.categoriesContainer}>
           {data.map((category) => {
             return (
-              <div
+              <CategoryCard
                 key={category.id}
-                className={styles.categoryCard}
-                onClick={() => setSelectedCategory(category.id)}
-                onMouseOver={() => setHoveredCategory(category.id)}
-                onMouseOut={() => setHoveredCategory("")}
-              >
-                <h3
-                  style={{
-                    color:
-                      hoveredCategory === category.id ||
-                      selectedCategory === category.id
-                        ? "lightgray"
-                        : "grey",
-                    fontSize:
-                      selectedCategory === category.id ? "24px" : "14px",
-                  }}
-                >
-                  {selectedLanguage === "es"
-                    ? category.titleEs
-                    : category.titleEn}
-                </h3>
-                {data[data.length - 1].id === category.id ? (
-                  ""
-                ) : (
-                  <div className={styles.verticalLine}></div>
-                )}
-              </div>
+                category={category}
+                setSelectedCategory={setSelectedCategory}
+                selectedCategory={selectedCategory}
+                hoveredCategory={hoveredCategory}
+                setHoveredCategory={setHoveredCategory}
+                selectedLanguage={selectedLanguage}
+                data={data}
+                template={template}
+              />
             );
           })}
         </div>
@@ -159,6 +148,7 @@ export default function Home({ response }) {
                 key={category.id}
                 category={category}
                 selectedLanguage={selectedLanguage}
+                template={template}
               />
             );
         })}

@@ -3,7 +3,11 @@ import ProductCard from "./ProductCard";
 import styles from "../styles/Subcategory.module.css";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 
-export default function Subcategory({ subCategory, selectedLanguage }) {
+export default function Subcategory({
+  subCategory,
+  selectedLanguage,
+  template,
+}) {
   const [selected, setSelected] = useState(false);
 
   return (
@@ -48,6 +52,7 @@ export default function Subcategory({ subCategory, selectedLanguage }) {
                 key={product.id}
                 product={product}
                 selectedLanguage={selectedLanguage}
+                template={template}
               />
             );
           })}
