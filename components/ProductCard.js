@@ -2,7 +2,7 @@ import styles from "../styles/ProductCard.module.css";
 
 import React from "react";
 
-export default function ProductCard({ product, selectedLanguage }) {
+export default function ProductCard({ product, selectedLanguage, template }) {
   return (
     <div className={styles.productCard}>
       <div className={styles.container}>

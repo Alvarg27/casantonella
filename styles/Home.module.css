@@ -6,24 +6,7 @@
   display: flex;
   justify-content: center;
 }
-.home .categoriesContainer .categoryCard {
-  height: 100px;
-  display: flex;
-  transition: 0.3s;
-  cursor: pointer;
-}
 
-.home .categoriesContainer .categoryCard h3 {
-  margin: auto;
-}
-
-.home .verticalLine {
-  width: 3px;
-  height: 3px;
-  background: gray;
-  margin: auto 5px;
-  border-radius: 50%;
-}
 .home .notesContainer {
   color: grey;
   margin: 10px auto;

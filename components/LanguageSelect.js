@@ -4,6 +4,7 @@ import styles from "../styles/LanguageSelect.module.css";
 export default function LanguageSelect({
   setSelectedLanguage,
   selectedLanguage,
+  template,
 }) {
   return (
     <div className={styles.languageSelect}>
