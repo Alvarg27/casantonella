@@ -19,7 +19,7 @@
   border-radius: 7px;
   margin: auto;
   object-fit: cover;
-  background: lightgray;
+  background: rgb(21, 23, 25);
 }
 
 .productCard .productInfo {
