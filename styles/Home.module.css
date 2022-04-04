@@ -1,6 +1,7 @@
 .home main {
   display: flex;
   flex-direction: column;
+  padding: 0 0 30px 0;
 }
 
 .home .notesContainer {
