@@ -4,8 +4,6 @@ import CategoryCard from "./CategoryCard";
 import Icon from "./Icon";
 import { useState } from "react";
 import { useRef } from "react";
-var scrollAmount = 0;
-var scrollMin = 0;
 
 export default function CategorySlider({
   setHoveredCategory,
@@ -18,6 +16,7 @@ export default function CategorySlider({
 }) {
   const ref = useRef(null);
   const scroll = (scrollOffset) => {
+    let scrollAmount = 0;
     ref.current.scrollTo({
       top: 0,
       left: (scrollAmount += scrollOffset),
