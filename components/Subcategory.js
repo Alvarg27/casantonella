@@ -42,7 +42,7 @@ export default function Subcategory({
           )}
         </div>
       </div>
-      <div className="line" />
+      <div className="line" style={{ width: "500px" }} />
 
       {selected ? (
         <div>
