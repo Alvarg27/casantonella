@@ -117,6 +117,9 @@ export default function Home({ response, template }) {
           content="width=device-width, initial-scale=1, maximum-scale=1"
         ></meta>
         <link rel="icon" href="/casantonella-icon.webp" />
+        <style>
+          {`body {background-color: ${template.backgroundColor};}`}{" "}
+        </style>
       </Head>
 
       <main className={styles.main}>

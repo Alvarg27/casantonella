@@ -1,6 +1,5 @@
 .productCard .container {
-  padding: 0 10px;
-  margin: 10px 0 10px 0;
+  padding: 10px 10px 0 10px;
   min-height: 50px;
   display: flex;
   flex-direction: column;
@@ -19,24 +18,20 @@
   border-radius: 7px;
   margin: auto;
   object-fit: cover;
-  background: rgb(21, 23, 25);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .productCard .productInfo {
   width: 100%;
 }
 .productCard .title {
-  color: white;
   margin: 0px 0 0px 0px;
   font-weight: normal;
 }
 .productCard .price {
-  color: black;
   margin: 0px 0 0px 20px;
-  color: lightgray;
 }
 .productCard .description {
-  color: grey;
   margin: 0;
   padding-top: 10px;
   font-size: 14px;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ProductCard from "./ProductCard";
 import styles from "../styles/Subcategory.module.css";
-import { FaCaretDown, FaCaretUp } from "react-icons/fa";
+import { GoChevronUp, GoChevronDown } from "react-icons/go";
 
 export default function Subcategory({
   subCategory,
@@ -18,7 +18,7 @@ export default function Subcategory({
       >
         <div className={styles.row}>
           <div style={{ margin: " 0" }}>
-            <h3>
+            <h3 style={{ color: template.textColor }}>
               {selectedLanguage === "es"
                 ? subCategory.titleEs
                 : subCategory.titleEn}
@@ -36,9 +36,9 @@ export default function Subcategory({
             )}
           </div>
           {selected ? (
-            <FaCaretUp className={styles.arrowIcon} />
+            <GoChevronUp className={styles.arrowIcon} />
           ) : (
-            <FaCaretDown className={styles.arrowIcon} />
+            <GoChevronDown className={styles.arrowIcon} />
           )}
         </div>
       </div>

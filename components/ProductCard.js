@@ -16,16 +16,27 @@ export default function ProductCard({ product, selectedLanguage, template }) {
           )}
           <div className={styles.productInfo}>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <h3 className={styles.title}>
+              <h3
+                className={styles.title}
+                style={{ color: template.textColor }}
+              >
                 {product.titleEn && selectedLanguage === "en"
                   ? product.titleEn
                   : product.titleEs}
               </h3>
-              <h3 className={styles.price}>${product.price}</h3>
+              <h3
+                className={styles.price}
+                style={{ color: template.textColor }}
+              >
+                ${product.price}
+              </h3>
             </div>
 
             {product.descriptionEs ? (
-              <p className={styles.description}>
+              <p
+                className={styles.description}
+                style={{ color: template.secondaryTextColor }}
+              >
                 {product.descriptionEn && selectedLanguage === "en"
                   ? product.descriptionEn
                   : product.descriptionEs}

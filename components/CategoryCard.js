@@ -19,7 +19,15 @@ export default function CategoryCard({
       onMouseOver={() => setHoveredCategory(category.id)}
       onMouseOut={() => setHoveredCategory("")}
     >
-      <div className={styles.container}>
+      <div
+        className={styles.container}
+        style={{
+          background:
+            hoveredCategory === category.id || selectedCategory === category.id
+              ? template.textColor
+              : template.secondaryBackgroundColor,
+        }}
+      >
         <div className={styles.titleContainer}>
           <div
             style={{
@@ -28,11 +36,11 @@ export default function CategoryCard({
               color:
                 hoveredCategory === category.id ||
                 selectedCategory === category.id
-                  ? "lightgray"
-                  : "grey",
+                  ? template.altColor
+                  : template.textColor,
             }}
           >
-            <Icon iconName={category.icon} />
+            <Icon iconName={category.icon} style={{ transition: "0.3s" }} />
           </div>
 
           <h3
@@ -40,8 +48,8 @@ export default function CategoryCard({
               color:
                 hoveredCategory === category.id ||
                 selectedCategory === category.id
-                  ? "lightgray"
-                  : "grey",
+                  ? template.altColor
+                  : template.textColor,
             }}
           >
             {selectedLanguage === "es" ? category.titleEs : category.titleEn}

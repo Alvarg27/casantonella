@@ -2,7 +2,6 @@
   margin: 20px 0;
 }
 .categoryCard .container {
-  background: rgb(36, 39, 43);
   width: 100px;
   height: 100px;
   display: flex;
@@ -10,6 +9,7 @@
   margin: 0 5px;
   border-radius: 15px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .categoryCard .titleContainer {
@@ -19,4 +19,6 @@
 }
 .categoryCard h3 {
   margin: auto;
+  transition: 0.3s;
+  font-weight: normal;
 }

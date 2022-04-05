@@ -21,10 +21,11 @@
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  background: lightgray;
+  background: #f0f0f0;
   margin: auto 0;
   display: flex;
   cursor: pointer;
+  box-shadow: 0 0 4px rgb(0, 0, 0, 0.3);
 }
 .categorySlider .arrowIcon {
   position: absolute;
@@ -32,5 +33,6 @@
   top: 50%;
   transform: translate(-50%, -50%);
   font-size: 15px;
-  color: gray;
+  transition: 0.3s;
+  color: grey;
 }

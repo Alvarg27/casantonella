@@ -3,17 +3,19 @@
   height: 70px;
   display: flex;
   flex-direction: column;
-  background: rgb(36, 39, 43);
 }
 .subCategory .titleContainer h3 {
   margin: auto 0;
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
 }
 .subCategory .row {
   display: flex;
   justify-content: space-between;
-  margin: auto 20px;
+  margin: auto;
 }
 .subCategory .arrowIcon {
-  color: lightgray;
-  margin: auto 0;
+  color: gray;
+  margin: auto 5px;
 }
