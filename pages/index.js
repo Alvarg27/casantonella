@@ -112,8 +112,6 @@ export default function Home({ response, template }) {
     firstCategory();
   }, []);
 
-  console.log(response);
-
   return (
     <div className={styles.home}>
       <Head>
