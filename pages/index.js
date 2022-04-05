@@ -9,6 +9,7 @@ import Hero from "../components/Hero";
 import Icon from "../components/Icon";
 import CategoryCard from "../components/CategoryCard";
 import CategorySlider from "../components/CategorySlider";
+import TopBar from "../components/TopBar";
 
 export default function Home({ response, template }) {
   const [selectedLanguage, setSelectedLanguage] = useState("es");
@@ -123,22 +124,16 @@ export default function Home({ response, template }) {
       </Head>
 
       <main className={styles.main}>
-        <LanguageSelect
-          setSelectedLanguage={setSelectedLanguage}
-          selectedLanguage={selectedLanguage}
-          template={template}
-        />
-        <Hero />
-        <CategorySlider
+        <TopBar
           setSelectedCategory={setSelectedCategory}
           selectedCategory={selectedCategory}
           hoveredCategory={hoveredCategory}
           setHoveredCategory={setHoveredCategory}
           selectedLanguage={selectedLanguage}
+          setSelectedLanguage={setSelectedLanguage}
           data={data}
           template={template}
         />
-        <div className="line" />
         {data.map((category) => {
           if (category.id === selectedCategory)
             return (
