@@ -4,7 +4,7 @@ import Subcategory from "./Subcategory";
 
 export default function Category({ category, selectedLanguage, template }) {
   return (
-    <div style={{ maxWidth: "500px", margin: "0 auto" }}>
+    <div>
       {category.subCategories.map((subCategory) => {
         if (subCategory.products.length > 0) {
           return (

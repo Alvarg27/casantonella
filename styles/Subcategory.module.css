@@ -1,7 +1,3 @@
-.subCategory {
-  max-width: 500px;
-  overflow: hidden;
-}
 .subCategory .titleContainer {
   cursor: pointer;
   height: 80px;
