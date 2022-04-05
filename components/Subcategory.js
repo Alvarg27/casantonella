@@ -42,7 +42,7 @@ export default function Subcategory({
           )}
         </div>
       </div>
-      <div className="line" style={{ maxWidth: "500px" }} />
+      <div className="line" />
 
       {selected ? (
         <div>
