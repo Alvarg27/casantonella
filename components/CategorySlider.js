@@ -44,30 +44,31 @@ export default function CategorySlider({
     <div className={styles.categorySlider}>
       <div className={styles.container}>
         <div ref={ref} className={styles.categoriesContainer}>
-          {offsetX <= 10 ? (
-            ""
-          ) : (
-            <div
-              onClick={() => handleScrollLeft()}
-              className={styles.arrowCircle}
-              style={{ left: "-10px" }}
-            >
-              <div className={styles.arrowIcon}>
-                <GoChevronLeft />
-              </div>
+          <div
+            onClick={() => handleScrollLeft()}
+            className={styles.arrowCircle}
+            style={{
+              left: "-10px",
+              opacity: offsetX <= 10 ? 0 : 1,
+              transition: "0.3s",
+            }}
+          >
+            <div className={styles.arrowIcon}>
+              <GoChevronLeft />
             </div>
-          )}
-          {offsetX >= scrollEnd ? (
-            ""
-          ) : (
-            <div
-              onClick={() => handleScrollRight()}
-              className={styles.arrowCircle}
-              style={{ right: "-10px" }}
-            >
-              <GoChevronRight className={styles.arrowIcon} />
-            </div>
-          )}
+          </div>
+
+          <div
+            onClick={() => handleScrollRight()}
+            className={styles.arrowCircle}
+            style={{
+              right: "-10px",
+              opacity: offsetX >= scrollEnd ? 0 : 1,
+              transition: "0.3s",
+            }}
+          >
+            <GoChevronRight className={styles.arrowIcon} />
+          </div>
 
           {data.map((category) => {
             return (
