@@ -39,16 +39,12 @@ export default function ProductCard({ product, selectedLanguage, template }) {
           ""
         )}
         {product.glutenFree ? (
-          <ProductTag background="peru" title="Libre de gluten" color="white" />
+          <ProductTag background="#b5a065" title="Sin gluten" color="white" />
         ) : (
           ""
         )}
         {product.sugarFree ? (
-          <ProductTag
-            background="#a2ccba"
-            title="Libre de azúcar"
-            color="white"
-          />
+          <ProductTag background="#a2ccba" title="Sin azúcar" color="white" />
         ) : (
           ""
         )}
@@ -56,7 +52,7 @@ export default function ProductCard({ product, selectedLanguage, template }) {
           <ProductTag
             background="
           #7663F2"
-            title="Libre de alcohol"
+            title="Sin alcohol"
             color="white"
           />
         ) : (
