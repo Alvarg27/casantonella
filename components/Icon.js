@@ -1,8 +1,28 @@
 import React from "react";
 import { render } from "react-dom";
 import * as FontAwesome from "react-icons/fa";
+import {
+  FaWineBottle,
+  FaUtensils,
+  FaIceCream,
+  FaGlassWhiskey,
+  FaGlassMartiniAlt,
+} from "react-icons/fa";
 
 export default function Icon({ iconName, template }) {
-  const icon = React.createElement(FontAwesome[iconName]);
-  return <div style={{ margin: "auto" }}>{icon}</div>;
+  const renderIcon = () => {
+    if (iconName === "FaWineBottle") {
+      return <FaWineBottle />;
+    } else if (iconName === "FaUtensils") {
+      return <FaUtensils />;
+    } else if (iconName === "FaIceCream") {
+      return <FaIceCream />;
+    } else if (iconName === "FaGlassWhiskey") {
+      return <FaGlassWhiskey />;
+    } else if (iconName === "FaGlassMartiniAlt") {
+      return <FaGlassMartiniAlt />;
+    }
+  };
+
+  return <div style={{ margin: "auto" }}>{renderIcon()}</div>;
 }
