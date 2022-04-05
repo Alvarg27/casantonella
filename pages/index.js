@@ -49,6 +49,13 @@ export default function Home({ response, template }) {
                           descriptionEn: product.descriptionEn,
                           mainImage: productImage,
                           price: product.price,
+                          new: product.new,
+                          recommended: product.recommended,
+                          vegan: product.vegan,
+                          vegetarian: product.vegetarian,
+                          glutenFree: product.glutenFree,
+                          sugarFree: product.sugarFree,
+                          alcoholFree: product.alcoholFree,
                         });
                       }
                     });
@@ -104,6 +111,8 @@ export default function Home({ response, template }) {
     sortResponse();
     firstCategory();
   }, []);
+
+  console.log(response);
 
   return (
     <div className={styles.home}>

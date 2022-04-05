@@ -1,8 +1,70 @@
 import styles from "../styles/ProductCard.module.css";
-
+import ProductTag from "./productTag";
 import React from "react";
 
 export default function ProductCard({ product, selectedLanguage, template }) {
+  const renderTags = () => {
+    return (
+      <div>
+        {product.new ? (
+          <ProductTag
+            background={template.textColor}
+            title="Nuevo"
+            color="white"
+          />
+        ) : (
+          ""
+        )}
+        {product.recommended ? (
+          <ProductTag
+            background={template.primaryColor}
+            title="Recomendado"
+            color="white"
+          />
+        ) : (
+          ""
+        )}
+        {product.vegan ? (
+          <ProductTag background="yellowgreen" title="Vegano" color="white" />
+        ) : (
+          ""
+        )}
+        {product.vegetarian ? (
+          <ProductTag
+            background="yellowgreen"
+            title="Vegetariano"
+            color="white"
+          />
+        ) : (
+          ""
+        )}
+        {product.glutenFree ? (
+          <ProductTag background="peru" title="Libre de gluten" color="white" />
+        ) : (
+          ""
+        )}
+        {product.sugarFree ? (
+          <ProductTag
+            background="#a2ccba"
+            title="Libre de azúcar"
+            color="white"
+          />
+        ) : (
+          ""
+        )}
+        {product.alcoholFree ? (
+          <ProductTag
+            background="
+          #7663F2"
+            title="Libre de alcohol"
+            color="white"
+          />
+        ) : (
+          ""
+        )}
+      </div>
+    );
+  };
   return (
     <div className={styles.productCard}>
       <div className={styles.container}>
@@ -31,7 +93,7 @@ export default function ProductCard({ product, selectedLanguage, template }) {
                 ${product.price}
               </h3>
             </div>
-
+            {renderTags()}
             {product.descriptionEs ? (
               <p
                 className={styles.description}
