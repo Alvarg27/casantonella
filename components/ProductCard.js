@@ -77,7 +77,7 @@ export default function ProductCard({ product, selectedLanguage, template }) {
             <div className={styles.productImage}>
               <Image
                 className={styles.image}
-                src={urlFor(product.mainImage).width(240).height(240).url()}
+                src={urlFor(product.mainImage).width(120).height(120).url()}
                 width="120px"
                 height="120px"
                 alt={product.titleEs}
