@@ -25,7 +25,7 @@ export default function CategoryCard({
           background:
             hoveredCategory === category.id || selectedCategory === category.id
               ? template.primaryColor
-              : template.secondaryBackgroundColor,
+              : template.textColor,
         }}
       >
         <div className={styles.titleContainer}>
@@ -37,7 +37,7 @@ export default function CategoryCard({
                 hoveredCategory === category.id ||
                 selectedCategory === category.id
                   ? template.altColor
-                  : template.textColor,
+                  : template.altColor,
             }}
           >
             <Icon iconName={category.icon} style={{ transition: "0.3s" }} />
@@ -49,7 +49,7 @@ export default function CategoryCard({
                 hoveredCategory === category.id ||
                 selectedCategory === category.id
                   ? template.altColor
-                  : template.textColor,
+                  : template.altColor,
             }}
           >
             {selectedLanguage === "es" ? category.titleEs : category.titleEn}
