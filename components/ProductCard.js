@@ -30,7 +30,7 @@ export default function ProductCard({
       <div>
         {product.new ? (
           <ProductTag
-            background={template.textColor}
+            background={template.altBackgroundColor}
             title="Nuevo"
             color="white"
           />
