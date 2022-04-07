@@ -14,6 +14,14 @@ export default function ProductCard({
 }) {
   const builder = imageUrlBuilder(sanityClient);
 
+  const handleClick = () => {
+    if (zoom === product.id) {
+      setZoom(false);
+    } else {
+      setZoom(product.id);
+    }
+  };
+
   function urlFor(source) {
     return builder.image(source);
   }
@@ -79,7 +87,7 @@ export default function ProductCard({
     <div className={styles.productCard}>
       <div
         className={styles.container}
-        onClick={() => setZoom(product.id)}
+        onClick={() => handleClick()}
         style={{
           boxShadow: zoom === product.id ? "0 0 10px rgb(0,0,0,0.25)" : "",
         }}
@@ -89,7 +97,7 @@ export default function ProductCard({
             <div
               className={styles.productImage}
               style={{
-                height: zoom === product.id ? "180px" : "120px",
+                height: zoom === product.id ? "100%" : "100%",
                 width: zoom === product.id ? "180px" : "120px",
               }}
             >
@@ -105,7 +113,7 @@ export default function ProductCard({
                   .height(24)
                   .url()}
                 style={{
-                  height: zoom === product.id ? "180px" : "120px",
+                  height: zoom === product.id ? "100%" : "100%",
                   width: zoom === product.id ? "180px" : "120px",
                 }}
               />
