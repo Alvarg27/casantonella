@@ -99,7 +99,7 @@ export default function ProductCard({ product, selectedLanguage, template }) {
                 className={styles.price}
                 style={{ color: template.textColor }}
               >
-                ${product.price}
+                {product.price ? "$" + product.price : "--"}
               </h3>
             </div>
             {renderTags()}
