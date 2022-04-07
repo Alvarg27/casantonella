@@ -38,9 +38,15 @@ export default function Subcategory({
             )}
           </div>
           {selected ? (
-            <GoChevronUp className={styles.arrowIcon} />
+            <GoChevronUp
+              className={styles.arrowIcon}
+              style={{ color: template.primaryColor }}
+            />
           ) : (
-            <GoChevronDown className={styles.arrowIcon} />
+            <GoChevronDown
+              className={styles.arrowIcon}
+              style={{ color: template.primaryColor }}
+            />
           )}
         </div>
       </div>
