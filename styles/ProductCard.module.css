@@ -17,15 +17,13 @@
   overflow: hidden;
   margin: auto;
   margin-right: 20px;
-  transition: 0.3s;
 }
 .productCard .productImage .image {
-  height: 120px;
-  width: 120px;
   border-radius: 7px;
   margin: auto;
   object-fit: cover;
   background: rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
 }
 
 .productCard .productInfo {
@@ -34,11 +32,9 @@
 .productCard .title {
   margin: 0px 0 0px 0px;
   font-weight: normal;
-  transition: 0.3s;
 }
 .productCard .price {
   margin: 0px 0 0px 20px;
-  transition: 0.3s;
 }
 .productCard .description {
   margin: 0;
