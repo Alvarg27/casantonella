@@ -157,9 +157,15 @@ export default function Home({ response, template }) {
         })}
         <div className={styles.notesContainer}>
           <p>
-            *Todos los precios están en pesos mexicanos e incluyen impuestos.
+            {selectedLanguage === "en"
+              ? "All prices are in Mexican pesos and include taxes."
+              : "*Todos los precios están en pesos mexicanos e incluyen impuestos."}
           </p>
-          <p>*En productos crudos, el comensal es responsable de su consumo</p>
+          <p>
+            {selectedLanguage === "en"
+              ? "Raw products, the diner is responsible for their consumption"
+              : "*En productos crudos, el comensal es responsable de su consumo"}
+          </p>
         </div>
         <p style={{ margin: "auto", color: "grey" }}>
           Powered by <b>tectify.io</b>
