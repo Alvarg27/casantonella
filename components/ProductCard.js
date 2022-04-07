@@ -2,8 +2,15 @@ import styles from "../styles/ProductCard.module.css";
 import ProductTag from "./productTag";
 import React from "react";
 import Image from "next/image";
+import { sanityClient } from "../sanity";
+import imageUrlBuilder from "@sanity/image-url";
 
 export default function ProductCard({ product, selectedLanguage, template }) {
+  const builder = imageUrlBuilder(sanityClient);
+
+  function urlFor(source) {
+    return builder.image(source);
+  }
   const renderTags = () => {
     return (
       <div>
@@ -70,7 +77,7 @@ export default function ProductCard({ product, selectedLanguage, template }) {
             <div className={styles.productImage}>
               <Image
                 className={styles.image}
-                src={product.mainImage}
+                src={urlFor(product.mainImage).width(120).height(120).url()}
                 width="120px"
                 height="120px"
               />
