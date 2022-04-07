@@ -86,7 +86,13 @@ export default function ProductCard({
       >
         <div className={styles.containerRow}>
           {product.mainImage ? (
-            <div className={styles.productImage}>
+            <div
+              className={styles.productImage}
+              style={{
+                height: zoom === product.id ? "180px" : "120px",
+                width: zoom === product.id ? "180px" : "120px",
+              }}
+            >
               <Image
                 className={styles.image}
                 src={urlFor(product.mainImage).width(240).height(240).url()}
@@ -98,6 +104,10 @@ export default function ProductCard({
                   .width(24)
                   .height(24)
                   .url()}
+                style={{
+                  height: zoom === product.id ? "180px" : "120px",
+                  width: zoom === product.id ? "180px" : "120px",
+                }}
               />
             </div>
           ) : (
