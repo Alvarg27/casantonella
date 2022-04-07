@@ -1,11 +1,12 @@
 import styles from "../styles/ProductCard.module.css";
 import ProductTag from "./productTag";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { sanityClient } from "../sanity";
 import imageUrlBuilder from "@sanity/image-url";
 
 export default function ProductCard({ product, selectedLanguage, template }) {
+  const [zoom, setZoom] = useState(false);
   const builder = imageUrlBuilder(sanityClient);
 
   function urlFor(source) {
@@ -71,15 +72,19 @@ export default function ProductCard({ product, selectedLanguage, template }) {
   };
   return (
     <div className={styles.productCard}>
-      <div className={styles.container}>
+      <div
+        className={styles.container}
+        onClick={() => setZoom(!zoom)}
+        style={{ boxShadow: zoom ? "0 0 10px rgb(0,0,0,0.25)" : "" }}
+      >
         <div className={styles.containerRow}>
           {product.mainImage ? (
             <div className={styles.productImage}>
               <Image
                 className={styles.image}
                 src={urlFor(product.mainImage).width(240).height(240).url()}
-                width="120px"
-                height="120px"
+                width={zoom ? "180px" : "120px"}
+                height={zoom ? "180px" : "120px"}
                 alt={product.titleEs}
                 placeholder="blur"
                 blurDataURL={urlFor(product.mainImage)
@@ -95,7 +100,10 @@ export default function ProductCard({ product, selectedLanguage, template }) {
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <h3
                 className={styles.title}
-                style={{ color: template.textColor }}
+                style={{
+                  color: template.textColor,
+                  fontSize: zoom ? "20px" : "16px",
+                }}
               >
                 {product.titleEn && selectedLanguage === "en"
                   ? product.titleEn
@@ -103,7 +111,10 @@ export default function ProductCard({ product, selectedLanguage, template }) {
               </h3>
               <h3
                 className={styles.price}
-                style={{ color: template.textColor }}
+                style={{
+                  color: template.textColor,
+                  fontSize: zoom ? "20px" : "16px",
+                }}
               >
                 {product.price ? "$" + product.price : "--"}
               </h3>
@@ -112,7 +123,10 @@ export default function ProductCard({ product, selectedLanguage, template }) {
             {product.descriptionEs ? (
               <p
                 className={styles.description}
-                style={{ color: template.secondaryTextColor }}
+                style={{
+                  color: template.secondaryTextColor,
+                  fontSize: zoom ? "16px" : "14px",
+                }}
               >
                 {product.descriptionEn && selectedLanguage === "en"
                   ? product.descriptionEn
