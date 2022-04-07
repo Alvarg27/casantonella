@@ -162,7 +162,10 @@ export default function ProductCard({
             )}
           </div>
         </div>
-        <div className="line" style={{ marginTop: "10px" }}></div>
+        <div
+          className="line"
+          style={{ marginTop: "10px", opacity: zoom === product.id ? "0" : 1 }}
+        ></div>
       </div>
     </div>
   );
