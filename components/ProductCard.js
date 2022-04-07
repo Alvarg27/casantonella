@@ -89,7 +89,7 @@ export default function ProductCard({
         className={styles.container}
         onClick={() => handleClick()}
         style={{
-          boxShadow: zoom === product.id ? "0 0 10px rgb(0,0,0,0.25)" : "",
+          boxShadow: zoom === product.id ? "0 0 20px rgb(0,0,0,0.25)" : "",
         }}
       >
         <div className={styles.containerRow}>
