@@ -12,6 +12,7 @@ export default function Hero({ template }) {
             src="/casantonella-logo.webp"
             height="100%"
             width="200px"
+            alt="CASA ANTONELLA"
           />
         </div>
         <div className={styles.overlay}></div>
