@@ -5,7 +5,6 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  transition: 0.3s;
   cursor: pointer;
   border-radius: 7px;
 }
@@ -25,7 +24,6 @@
   margin: auto;
   object-fit: cover;
   background: rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
 }
 
 .productCard .productInfo {
