@@ -1,6 +1,7 @@
 import styles from "../styles/ProductCard.module.css";
 import ProductTag from "./productTag";
 import React from "react";
+import Image from "next/image";
 
 export default function ProductCard({ product, selectedLanguage, template }) {
   const renderTags = () => {
@@ -67,7 +68,12 @@ export default function ProductCard({ product, selectedLanguage, template }) {
         <div className={styles.containerRow}>
           {product.mainImage ? (
             <div className={styles.productImage}>
-              <img src={product.mainImage} />
+              <Image
+                className={styles.image}
+                src={product.mainImage}
+                width="120px"
+                height="120px"
+              />
             </div>
           ) : (
             ""

@@ -20,6 +20,7 @@ export default function TopBar({
         top: "0px",
         background: template.backgroundColor,
         boxShadow: "0 0 10px rgb(0,0,0,.25)",
+        zIndex: 2,
       }}
     >
       <LanguageSelect
