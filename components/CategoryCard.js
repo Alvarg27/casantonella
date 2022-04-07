@@ -24,7 +24,7 @@ export default function CategoryCard({
         style={{
           background:
             hoveredCategory === category.id || selectedCategory === category.id
-              ? template.textColor
+              ? template.primaryColor
               : template.secondaryBackgroundColor,
         }}
       >
