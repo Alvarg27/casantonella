@@ -7,6 +7,8 @@ export default function Subcategory({
   subCategory,
   selectedLanguage,
   template,
+  zoom,
+  setZoom,
 }) {
   const [selected, setSelected] = useState(false);
 
@@ -53,6 +55,8 @@ export default function Subcategory({
                 product={product}
                 selectedLanguage={selectedLanguage}
                 template={template}
+                zoom={zoom}
+                setZoom={setZoom}
               />
             );
           })}

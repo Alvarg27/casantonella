@@ -2,7 +2,13 @@ import React, { useEffect } from "react";
 import { sanityClient } from "../sanity";
 import Subcategory from "./Subcategory";
 
-export default function Category({ category, selectedLanguage, template }) {
+export default function Category({
+  category,
+  selectedLanguage,
+  template,
+  zoom,
+  setZoom,
+}) {
   return (
     <div>
       {category.subCategories.map((subCategory) => {
@@ -13,6 +19,8 @@ export default function Category({ category, selectedLanguage, template }) {
               subCategory={subCategory}
               selectedLanguage={selectedLanguage}
               template={template}
+              zoom={zoom}
+              setZoom={setZoom}
             />
           );
         }

@@ -16,6 +16,7 @@ export default function Home({ response, template }) {
   const [selectedCategory, setSelectedCategory] = useState();
   const [hoveredCategory, setHoveredCategory] = useState();
   const [data, setData] = useState([]);
+  const [zoom, setZoom] = useState();
 
   const sortResponse = () => {
     const categoryArr = [];
@@ -149,6 +150,8 @@ export default function Home({ response, template }) {
                 category={category}
                 selectedLanguage={selectedLanguage}
                 template={template}
+                zoom={zoom}
+                setZoom={setZoom}
               />
             );
         })}
