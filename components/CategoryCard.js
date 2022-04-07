@@ -25,7 +25,7 @@ export default function CategoryCard({
           background:
             hoveredCategory === category.id || selectedCategory === category.id
               ? template.primaryColor
-              : template.textColor,
+              : template.altBackgroundColor,
         }}
       >
         <div className={styles.titleContainer}>

@@ -50,7 +50,7 @@ export default function Subcategory({
           )}
         </div>
       </div>
-      <div className="line" />
+      <div className="line" style={{ background: template.borderColor }} />
 
       {selected ? (
         <div>

@@ -6,11 +6,12 @@ function MyApp({ Component, pageProps }) {
     primaryColor: "#622726",
     secondaryColor: "#f4f2df",
     altColor: "white",
-    backgroundColor: "white",
+    backgroundColor: "#111214",
     secondaryBackgroundColor: "#f0f0f0",
-    textColor: "#24272a",
+    altBackgroundColor: "#24272a",
+    textColor: "lightgray",
     secondaryTextColor: "gray",
-    BorderColor: "lightgray",
+    borderColor: "#24272a",
   };
   return <Component {...pageProps} template={template} />;
 }
