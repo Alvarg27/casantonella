@@ -7,11 +7,11 @@ export default function Hero({ template }) {
     <div className={styles.hero}>
       <div className={styles.container}>
         <div className={styles.imageContainer}>
-          <Image
+          <img
             className={styles.image}
             src="/casantonella-logo.webp"
             height="100%"
-            width="200px"
+            width="180px"
             alt="CASA ANTONELLA"
           />
         </div>

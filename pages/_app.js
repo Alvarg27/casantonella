@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
     altColor: "white",
     backgroundColor: "white",
     secondaryBackgroundColor: "#f0f0f0",
-    textColor: "#303030",
+    textColor: "#24272a",
     secondaryTextColor: "gray",
     BorderColor: "lightgray",
   };

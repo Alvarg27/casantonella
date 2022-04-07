@@ -1,3 +1,6 @@
+.categorySlider {
+  background: rgb(26, 28, 31);
+}
 .categorySlider .container {
   position: relative;
   margin: auto;

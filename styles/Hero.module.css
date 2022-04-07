@@ -15,7 +15,6 @@
 }
 .hero .container .imageContainer {
   margin: auto;
-  width: 200px;
   position: relative;
   z-index: 2;
   transform: translateY(15px);
